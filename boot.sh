@@ -18,7 +18,7 @@ while (true); do
 oldsum=$(cat /tmp/socat.pem|md5sum)
 newsum=$(cat ${PRIVKEY} ${CERTPEM})
 
-[[ "$oldsum" ]] = [[ "$newsum" ]] || (
+[[ "$oldsum"  =  "$newsum" ]] || (
    echo "CERTs CHANGED, restarting socat"
    cat ${PRIVKEY} ${CERTPEM} > /tmp/socat.pem
    kill -9 $(pidof socat)
