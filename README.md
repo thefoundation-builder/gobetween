@@ -25,7 +25,7 @@ specialized gobetween Docker image
 * socat will bind to BINDPORT and do ssl termination,
   you only need a "clean" tcp gobetween config listening on port 55555
 * finally test against your new fail-over backend (univention example)
-    `ldapsearch -x -LLL  -H ldaps://192.168.178.111:7636 -D uid=myuser.name,cn=users,dc=mydomain,dc=lan -w $psw  -b "dc=mydomain,dc=lan"|grep -e ^dn -e ^cn -e jectClass`
+    `ldapsearch -x -LLL  -H ldaps://192.168.178.111:6636 -D uid=myuser.name,cn=users,dc=mydomain,dc=lan -w $psw  -b "dc=mydomain,dc=lan"|grep -e ^dn -e ^cn -e jectClass`
 INSTALL/UPGRADE WITHOUT GIT: from parent of target: `curl https://gitlab.com/the-foundation/gobetween/-/archive/main/gobetween-main.tar.gz |tar xvz`
 ---
 
