@@ -9,7 +9,7 @@ services:
   gobetween:
     container_name: gobetween.${APP_URL:-mydomain.lan}
     hostname: gobetween.${APP_URL:-mydomain.lan}
-    #image: 
+    #image:
     environment:
       CERTPEM:  ${CERTPEM}
       PRIVKEY:  ${PRIVKEY}
@@ -22,7 +22,7 @@ services:
     networks:
       default: null
     ports:
-      - ${BINDIP:-0.0.0.0}:${BINDPORT:-11111}:11111
+      - ${BINDIP:-0.0.0.0}:${BINDPORT:-11111}:${BINDPORT:-11111}
     volumes:
       - ./conf:/conf
       - ${LETSENCRYPT_PATH:-/etc/letsencrypt}:/etc/letsencrypt:ro
