@@ -8,7 +8,7 @@ echo "launching gobetween"
 
 echo "init:socat"
 cat ${PRIVKEY} ${CERTPEM} > /tmp/socat.pem
-socatcmd="socat OPENSSL-LISTEN:${BINDPORT},reuseaddr,pf=ip4,fork,cert=/tmp/socat.pem,cafile=${CERTPEM},verify=0,openssl-min-proto-version=TLS${MINTLS} tcp-connect:127.0.0.0:55555"
+socatcmd="socat OPENSSL-LISTEN:${BINDPORT},reuseaddr,pf=ip4,fork,cert=/tmp/socat.pem,cafile=${CERTPEM},verify=0,openssl-min-proto-version=TLS${MINTLS} tcp-connect:127.0.0.1:55555"
 echo "SOCAT COMMAND: $socatcmd"
 
 while (true); do
