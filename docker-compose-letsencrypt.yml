@@ -1,0 +1,19 @@
+networks:
+  default:
+    external:
+      name: webproxy
+services:
+  npm.vorschau.cloud:
+    container_name: gobetween.${APP_URL:-mydomain.lan}
+    hostname: gobetween.${APP_URL:-mydomain.lan}
+    #image: 
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      default: null
+    volumes:
+      - ./conf:/conf
+      - ${LETSENCRYPT_PATH:-/etc/letsencrypt}:/etc/letsencrypt:ro
+version: '3.1'
+
