@@ -24,6 +24,5 @@ newsum=$(cat ${PRIVKEY} ${CERTPEM})
    kill -9 $(pidof socat)
 )
 sleep 180
-done
-) &
+done  &
 exec /usr/bin/gobetween
