@@ -26,4 +26,4 @@ newsum=$(cat ${PRIVKEY} ${CERTPEM})
 )
 sleep 180
 done &  ) 
-exec /usr/bin/gobetween
+exec /usr/bin/gobetween -c /conf/gobetween.conf
