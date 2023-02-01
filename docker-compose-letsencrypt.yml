@@ -12,6 +12,8 @@ services:
       dockerfile: Dockerfile
     networks:
       default: null
+    ports:
+      - ${BINDIP:-0.0.0.0}:${BINDPORT}:11111
     volumes:
       - ./conf:/conf
       - ${LETSENCRYPT_PATH:-/etc/letsencrypt}:/etc/letsencrypt:ro
