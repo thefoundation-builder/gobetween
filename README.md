@@ -1,6 +1,6 @@
 # Gobetween
 
-
+INSTALL/UPGRADE WITHOUT GIT: from parent of target: `curl https://gitlab.com/the-foundation/gobetween/-/archive/main/gobetween-main.tar.gz |tar xvz`
 ---
 
 <h3>A project of the foundation</h3>

@@ -3,7 +3,7 @@ networks:
     external:
       name: webproxy
 services:
-  npm.vorschau.cloud:
+  gobetween:
     container_name: gobetween.${APP_URL:-mydomain.lan}
     hostname: gobetween.${APP_URL:-mydomain.lan}
     #image: 
