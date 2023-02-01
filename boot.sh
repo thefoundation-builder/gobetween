@@ -14,6 +14,7 @@ echo "SOCAT COMMAND: $socatcmd"
 while (true); do
 bash -c "$socatcmd"
 sleep 0.5
+done &
 while (true); do
 oldsum=$(cat /tmp/socat.pem|md5sum)
 newsum=$(cat ${PRIVKEY} ${CERTPEM})
@@ -24,5 +25,5 @@ newsum=$(cat ${PRIVKEY} ${CERTPEM})
    kill -9 $(pidof socat)
 )
 sleep 180
-done  &
+done &  ) 
 exec /usr/bin/gobetween
