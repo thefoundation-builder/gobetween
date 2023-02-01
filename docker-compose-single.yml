@@ -22,6 +22,6 @@ services:
     networks:
       default: null
     ports:
-      - ${BINDIP:-0.0.0.0}:${BINDPORT:-11111}:11111
+      - ${BINDIP:-0.0.0.0}:${BINDPORT:-11111}:${BINDPORT:-11111}
     volumes:
       - ./conf:/conf
