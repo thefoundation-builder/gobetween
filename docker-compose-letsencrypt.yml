@@ -1,3 +1,5 @@
+version: '3.1'
+
 networks:
   default:
     external:
@@ -8,15 +10,19 @@ services:
     container_name: gobetween.${APP_URL:-mydomain.lan}
     hostname: gobetween.${APP_URL:-mydomain.lan}
     #image: 
+    environment:
+      CERTPEM:  ${CERTPEM}
+      PRIVKEY:  ${PRIVKEY}
+      MINTLS:   ${MINTLS:-1.2}
+      BINDPORT: ${BINDPORT:-11111}
+
     build:
       context: .
       dockerfile: Dockerfile
     networks:
       default: null
     ports:
-      - ${BINDIP:-0.0.0.0}:${BINDPORT}:11111
+      - ${BINDIP:-0.0.0.0}:${BINDPORT:-11111}:11111
     volumes:
       - ./conf:/conf
       - ${LETSENCRYPT_PATH:-/etc/letsencrypt}:/etc/letsencrypt:ro
-version: '3.1'
-
