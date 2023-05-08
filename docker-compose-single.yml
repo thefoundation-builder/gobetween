@@ -9,6 +9,7 @@ services:
   gobetween:
     container_name: gobetween.${APP_URL:-mydomain.lan}
     hostname: gobetween.${APP_URL:-mydomain.lan}
+    restart: unless-stopped
     #image:
     environment:
       CERTPEM:  ${CERTPEM}
